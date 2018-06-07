@@ -1,8 +1,201 @@
 <html>
 <head>
 <title>Hristo Bojinov's Slice of WWW</title>
+<meta name="description" content="Hristo Bojinov's professional web page: software engineering, research in computer and network security, 3D modeling and printing, health, and various other projects.">
+<meta name="keywords" content="hristo bojinov computer science mobile security network embedded android web server 3d printing modeling">
+<style>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  border-radius: 5px;
+}
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+img {
+  border-radius: 5px 5px 0 0;
+}
+.container {
+  padding: 2px 16px;
+}
+hx { background-color:#FFFF00; }
+</style>
 </head>
 <body>
-It works!!!
+
+<img alt="bojinov.org" src="bojinov.gif" border=0>
+
+<p>
+<a href="resume.html">Resume</a>&nbsp;&nbsp;<a href="publications.html">Publications</a>
+</p>
+
+<p>
+<b>[2018]</b>
+</p>
+
+<div class="card"><div class="container"><p>For several years, on and off, I have dabbled in 3D printing. To download and order printed items is something trivial these days, however my interest is in the [relatively simple] 3D modeling formats in use. I started out using SketchUp but eventually found it to be restrictive. The only artifact remaining from those days is this compiled X3G file, ready to print on a FlashForge printer (note: I have the older FlashForge with a frame made out of wood; your results on newer models currently available may vary).</p>
+
+<p><a href="hacks/Ship.x3g">Compiled X3G file for printing a ship on a FlashForge printer</a> (Side note: never trust compiled code. You have been warned. Read <a href="https://www.win.tue.nl/~aeb/linux/hh/thompson/trust.html">this</a> classic write-up for reference.)</p>
+
+<img src="hacks/Ship_Support.jpg" width="100px" />
+<img src="hacks/Ship_Clean.jpg" width="100px" />
+
+<p>My next step was to generate STL files directly. Building a surface is relatively simple, and you can use the following C code to try that out.</p>
+
+<p><a href="hacks/grid2stl.c">C code to convert a surface height matrix into a STL file for 3D printing</a> (read the code for usage details)</p>
+
+<p>Lately I like describing shapes in the OpenSCAD language which has support for set operations (intersect, subtract, union, etc.) as well as loops etc. Here is the code to generate a brick compatible with the Lego Duplo line. The brick is hollow to allow for some further experimentation that a will not go into right now.</p>
+
+<p><a href="hacks/Duplo_Box.scad">OpenSCAD code to generate a two-part 4x2 Duplo-compatible brick</a></p>
+
+<img src="hacks/Duplo_Above.png" width="100px" />
+<img src="hacks/Duplo_Below.png" width="100px" />
+</div></div>
+
+<p>
+<b>[2017]</b>
+</p>
+
+<p>
+<a href="https://blogs.nvidia.com/blog/2017/05/11/how-deep-learning-will-stir-more-joy-into-your-cooking/">Talk and Interview at GTC 2017</a>
+<br/>
+<a href="http://www.businessinsider.com/innit-recognizes-food-in-your-fridge-and-creates-recipes-2016-5">Innit at Pirch SOHO</a>
+<br/>
+<a href="http://thespoon.tech/innit-acquires-shopwell-in-effort-to-create-a-food-gps/">Innit acquires ShopWell</a>
+</p>
+
+<p>
+<b>[2013]</b>
+</p>
+
+<p>
+Our work on sensor fingerprinting got picked up by <a href="http://blog.sfgate.com/techchron/2013/10/10/stanford-researchers-discover-alarming-method-for-phone-tracking-fingerprinting-through-sensor-flaws/">SF Chronicle</a> (and also in print, on Friday, October 11th, 2013), <a href="http://arstechnica.com/security/2013/10/stealthy-technique-fingerprints-smartphones-by-measuring-users-movements/">ArsTechnica</a>, <a href="http://news.discovery.com/tech/gear-and-gadgets/smartphones-motion-sensor-is-unique-can-id-you-131014.htm">Discovery News</a>, and other news outlets.
+</p>
+
+<p>
+In other news: <a href="http://www.prweb.com/releases/2013/6/prweb10857513.htm">customizing the Android OS</a>. Don't miss the explainer video about <a href="https://www.youtube.com/watch?v=sfD7Dulgwoc">FleetOS</a>!
+</p>
+
+<p>
+<b>[2012]</b>
+</p>
+
+<p>
+Working hard on research involving the use of implicit learning of motor tasks for authentication purposes. The work was extensively featured in the media in the summer of 2012.
+</p>
+
+<p>
+<a href="pdfs/usenixsec2012-rubberhose.pdf">USENIX Security 2012 paper</a> on designing security primitives resistant to user coercion (a.k.a. "rubber hose cryptanalysis").<br/>
+Articles about this work on <a href="https://www.schneier.com/blog/archives/2012/07/implicit_passwo.html">Schneier on Security</a>, <a href="http://www.theregister.co.uk/2012/07/19/neuroscience_as_password_protector/">The Register</a> (you know you've made it when you get called <em>a boffin</em>), <a href="http://www.nbcnews.com/technology/most-secure-password-one-you-dont-have-remember-896669">NBC News</a>
+</p>
+
+<p>
+<b>[2011]</b>
+</p>
+
+<p>
+I have been increasingly interested in user behaviors at the intersection of security, wireless computing, and the web. In particular, Android has been an excellent, open platform for experimentation.
+</p>
+
+<p>
+<a href="pdfs/androidopen2011-3lm-slides.pdf">Android Open 2011 slides</a> about 3LM's end-to-end Enterprise Android solution<br/>
+<a href="pdfs/usenix2011-secure-embedded-paper.pdf">USENIX 2011 paper</a> about an Android web server designed with security in mind; a continuation of our earlier embedded web interface security project<br/>
+<a href="pdfs/wisec2011-mobileaslr-paper.pdf">WISEC 2011 paper</a> about Address Space Layout Randomization (ASLR) for mobile devices which requires no kernel changes in the system; in addition, we discuss Crash Stack Analysis: a novel technique for centrally identifying ASLR brute-forcing attacks<br/>
+<a href="pdfs/hotmobile2011-magkey-paper.pdf">HOTMOBILE 2011 paper</a> and <a href="pdfs/hotmobile2011-magkey-slides.pdf">slides</a> about MagKey and MicKey: experimental hardware authentication tokens using a smartphone's compass and microphone as receivers; the main advantages of the design are low cost (less than $1 per token) and low power consumption, as well as broad applicability to existing smartphones<br/>
+</p>
+
+<p>
+<b>[2010]</b>
+</p>
+
+<p>
+<a href="pdfs/cset2010-webseclab-paper.pdf">CSET 2010 paper</a> about Webseclab, a web security education tool I helped create<br/>
+<a href="pdfs/esorics2010-kamouflage.pdf">ESORICS 2010 paper</a> about designing loss-resistant password managers; the high-order bit: it is hard to make security work around irrational human beings; the original publication will appear in the conference proceedings, at www.springerlink.com<br/>
+</p>
+
+<p><a href="hacks/convert2.py">A Python script</a> for batch AVI to MP4 conversion on Windows, along with the required <a href="hacks/libx264-slow.ffpreset">the preset file</a>.</p>
+
+<p>
+<b>[2009]</b>
+</p>
+
+<p>
+Web servers are getting embedded in electronic appliances of all kinds: from home routers, to picture frames and IP phones. Usually the goal is to provide a familiar management interface for the devices; security is typically an afterthought. In recent work we have evaluated the security of web interfaces exposed by a broad range of consumer and enterprise hardware.
+</p>
+
+<p>
+<a href="pdfs/ccs2009-xcs-paper.pdf">CCS 2009 paper</a> and <a href="pdfs/ccs2009-xcs-slides.pdf">slides</a> about XCS vulnerabilities and SiteFirewall, a Firefox extension that prevents XCS attacks from running to completion (this work was also featured in "Communications of the ACM", August 2010, Vol.53, No.8)<br/>
+<a href="pdfs/bh2009-emi-slides.pdf">BlackHat USA 2009 briefing</a> on Embedded Management Interfaces<br/>
+<a href="http://www.theregister.co.uk/2009/07/16/buggy_web_interface_peril/">Article about our embedded web interface work, on The Register</a>
+</p>
+
+<p>Тази година Международната Олимпиада по Информатика беше проведена в Пловдив, България. По този случай БНТ засне филм с интервюта на бивши и настоящи участници и ръководители от Българските отбори.</p>
+
+<p>
+<a href="pdfs/BNT_IOI_Movie_qvga.mp4">Филм на БНТ по случай МОИ 2009 (IOI 2009, Plovdiv, Bulgaria)</a>
+</p>
+
+<p>
+<b>[2008]</b>
+</p>
+
+<p>Постарах се да напиша накратко впечатленията си от Американската образователна система и от организацията на компютърната индустрия в САЩ (с фокус върху Силициевата Долина).  В процеса на редактирането получих много ценни коментари от приятели, които също като мен са бивши олимпийци. Новогодишен подарък за изгряващите звезди на информатиката в България.</p>
+
+<p>
+<a href="http://bojinov.org/translations/siliconvalley.html">Как работи Долината?</a>
+</p>
+
+<p>
+<b>[2007]</b>
+</p>
+
+<p>
+We shipped the NetApp Lifetime Key Management appliance: <a href="http://www.netapp.com/us/company/news/press-releases/news_rel_20060605.aspx">LKM 3.0 press release</a>.
+</p>
+
+<p>
+<b>[2005]</b>
+</p>
+
+<p>
+Network Appliance completed the acquisition of Decru in August. Proud to have been one of the original engineers for the <a href="http://www.eweek.com/c/a/Data-Storage/New-Appliances-Set-Sights-on-Storage-Security/">DataFort E-series</a>.
+</p>
+
+<p>
+<b>[2001]</b>
+</p>
+
+<p>
+Back in the early post-Internet-bubble days, at Oracle we were a small team in between Apps and the DB, figuring out how to best <a href="http://oracle4ryou.blogspot.com/2013/03/mwa-services-in-oracle-apps.html">deliver enterprise apps to mobile terminals</a>. <em>(NOTE: In 2013, it is amazing to find out that a piece of code I conceived, designed, and implemented more than a decade ago, the MWA Dispatcher is still alive and well.)</em>
+</p>
+
+<p>
+Предлагам Ви един превод на известната статия "Катедралата и Базарът" написана от Ерик Реймънд. Linux има много сериозни недостатъци, защото "куцо и сакато" пише код, дори в ядрото. От друга страна, Open Source движението е олицетворение на промените в света. Интернет даде възможност на много хора да обменят информация и сътрудничат---без дори да са се виждали на живо. Живеем в интересно време.</p>
+
+<p>
+<a href="http://bojinov.org/translations/cathedral.html">Катедралата и Базарът</a>
+</p>
+
+<p>
+<b>[1999]</b>
+</p>
+
+<p>
+<a href="http://doi.ieeecomputersociety.org/10.1109/ICMAS.2000.858446">ICMAS 2000 paper: "Multi-agent Control of Emergent Behaviors"</a><br>
+<a href="http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=844846">ICRA 2000 paper: "Emergent Structures in Modular Self-reconfigurable Robots"</a><br>
+</p>
+
+<p>
+<b>[1992]</b>
+</p>
+
+<p>
+Way back when, in the days when you had to line up and wait in order to work on a computer in Bulgaria, some teenagers decided to build an adventure game. Here it is, direct from the archives. (Runs in 16-bit MS-DOS mode. Mostly in Bulgarian. Once in the interactive part of the game, to quit press Esc, select "Quit", then press "D"---not that you would ever want to leave...)
+</p>
+
+<p>
+<a href="hacks/zamak.zip">Hovering Castle game</a><br>
+</p>
+
 </body>
 </html>
